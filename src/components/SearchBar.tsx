@@ -1,9 +1,11 @@
 import React from 'react';
 
-const SearchBar: React.FC<{ isClicked: boolean }> = ({ isClicked }) => {
+const SearchBar: React.FC = () => {
 
     return (
-        <h1>s</h1>
+        <div className='search-bar'>
+            <h1>s</h1>
+        </div>
     );
 };
 

@@ -5,23 +5,27 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import './App.css';
 import SearchBar from './components/SearchBar';
+import HomePage from './components/HomePage';
 
 
 function App() {
 
-  const [isClicked, setIsClicked] = useState(false);
+  const [isAuthForm, setIsAuthForm] = useState(false);
+
+ // const [isSearchBar, setIsSearchBar] = useState(true);
 
   return (
     <div className="App">
       <header className="App-header">
-        <Header isClicked={isClicked} setIsClicked={setIsClicked} /> 
+        <Header isAuthForm={isAuthForm} setIsAuthForm={setIsAuthForm} /> 
       </header>
       <main>
         <Routes>
+           {/*Strona główna aplikacji */}
+        <Route path="/" element={<HomePage />} />
           {/* Strona logowania/rejestracji */}
           <Route path="/auth" element={<AuthForm />} />
         </Routes>
-        <SearchBar isClicked={isClicked} />
       </main>
       <Footer /> 
     </div>
