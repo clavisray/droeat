@@ -23,8 +23,13 @@
 .logo {
     margin: 15px;
     float: left;
-    width: 20%;
 }
+.logoMain {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+  }
+
 
 .PrzejdzDoLogowania {
     width: 100%;
@@ -33,7 +38,6 @@
     cursor: pointer;
     height: 43px;
     width: 100px;
-    padding: 0px;
     margin-left: auto;
     border-radius: 15px;
 }
@@ -122,6 +126,57 @@
 }
 
 /* Searchbar */
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    height: 56px;
+    padding: 0 20px;
+    border: 2px solid #ccc;
+    border-radius: 28px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input {
+    width: 515px;
+    height: 100%;
+    padding: 0 20px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search-bar button {
+    /* width: 40px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    cursor: pointer;
+    background-color: #ffA500;
+    color: white; */
+    border-radius: 20px;
+    padding: 8px 16px;             
+    background-color: #ffA500;     
+    color: white;              
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.search-bar button:hover {
+    background-color: #E59400;
+    align-self: center;
+}
+
+
 
 
 /* Register, Login */

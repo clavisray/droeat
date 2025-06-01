@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Dropdown from './Dropdown';
+import Logo from '../assets/logomain.jpg';
 
 const Header: React.FC<{
     isAuthForm: boolean;
@@ -57,7 +58,7 @@ const Header: React.FC<{
             <div className='header'>
                 <div className='logo'>
                     <button className='logo-button' onClick={handleLogoClick}>
-                        <img src='/logo.png' alt='Logo' />
+                        <img src={Logo} alt='Logo' className='logoMain'/>
                    </button>
                     
                 </div>
