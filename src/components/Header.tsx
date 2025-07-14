@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Dropdown from './Dropdown';
-import Logo from '../assets/logomain.jpg';
+import Logo from '../assets/logo.webp';
 
 const Header: React.FC<{
     isAuthForm: boolean;
-    //isSearchBar: boolean;
     setIsAuthForm: React.Dispatch<React.SetStateAction<boolean>>;
-    //setIsSearchBar: React.Dispatch<React.SetStateAction<boolean>>;
- }> = ({ isAuthForm, setIsAuthForm, /*isSearchBar, setIsSearchBar*/ }) => {
+ }> = ({ isAuthForm, setIsAuthForm}) => {
 
     const navigate = useNavigate();
 
@@ -21,7 +19,6 @@ const Header: React.FC<{
         navigate('/auth');
         setIsAuthForm(true);
         setIsDropdown(false);
-        //setIsSearchBar(false);
     };
 
     const toggleDropdown = () => {
@@ -32,8 +29,9 @@ const Header: React.FC<{
         navigate('/');
         setIsAuthForm(false);
         setIsDropdown(false);
-        //setIsSearchBar(true);
     };
+
+    
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -55,36 +53,36 @@ const Header: React.FC<{
     
     return (
         <header>
-            <div className='header'>
+            <div className="header">
                 <div className='logo'>
                     <button className='logo-button' onClick={handleLogoClick}>
                         <img src={Logo} alt='Logo' className='logoMain'/>
                    </button>
                     
                 </div>
-                {!isAuthForm && (
-                    <div className='authform'>                    
-                        <button className='PrzejdzDoLogowania' onClick={handleLoginRedirect}>
-                        Zaloguj się
-                        </button>
-                    </div>
-                )}
-                <div className='dropdown'>
-                    <button 
-                        className='dropdown-button' 
-                        onClick={toggleDropdown}
-                        ref={dropdownButtonRef}
-                    >
-                            <span className="line"></span>
-                            <span className="line"></span>
-                            <span className="line"></span>
-                    </button>
-                    {isDropdown && (
-                        <div ref={dropdownRef}>
-                            <Dropdown />
+                    {!isAuthForm && (
+                        <div className='authform'>                    
+                            <button className='PrzejdzDoLogowania' onClick={handleLoginRedirect}>
+                            Zaloguj się
+                            </button>
                         </div>
-                    )}   
-                </div>
+                    )}
+                    <div className='dropdown'>
+                        <button 
+                            className='dropdown-button' 
+                            onClick={toggleDropdown}
+                            ref={dropdownButtonRef}
+                        >
+                                <span className="line"></span>
+                                <span className="line"></span>
+                                <span className="line"></span>
+                        </button>
+                        {isDropdown && (
+                            <div ref={dropdownRef}>
+                                <Dropdown />
+                            </div>
+                        )}   
+                    </div>
             </div>     
         </header>
     );
